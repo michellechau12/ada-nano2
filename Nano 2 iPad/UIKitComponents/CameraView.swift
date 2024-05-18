@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct CameraView: UIViewControllerRepresentable {
-    @ObservedObject var cameraViewModel: CameraSetupViewModel
+    @ObservedObject var cameraSetupViewModel: CameraSetupViewModel
     
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = CameraViewController()
-        viewController.cameraViewModel = cameraViewModel
+        viewController.cameraSetupViewModel = cameraSetupViewModel
         return viewController
     }
     

@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA0427012BF7C713005BD747 /* CameraSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */; };
 		DA0427042BF7C8F6005BD747 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427032BF7C8F6005BD747 /* CameraView.swift */; };
-		DA0427082BF860B9005BD747 /* DeviceOrientationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427072BF860B9005BD747 /* DeviceOrientationViewModel.swift */; };
 		DA04270A2BF86DC3005BD747 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427092BF86DC3005BD747 /* CameraViewController.swift */; };
-		DA04270D2BF8888C005BD747 /* TextDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04270C2BF8888C005BD747 /* TextDetectionViewModel.swift */; };
+		DA04270D2BF8888C005BD747 /* TextToSpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04270C2BF8888C005BD747 /* TextToSpeechViewModel.swift */; };
 		DAE9FCD52BF4CC7300DEEF1C /* Nano_2_iPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9FCD42BF4CC7300DEEF1C /* Nano_2_iPadApp.swift */; };
 		DAE9FCD72BF4CC7300DEEF1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9FCD62BF4CC7300DEEF1C /* ContentView.swift */; };
 		DAE9FCD92BF4CC7500DEEF1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE9FCD82BF4CC7500DEEF1C /* Assets.xcassets */; };
@@ -21,9 +20,8 @@
 /* Begin PBXFileReference section */
 		DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSetupViewModel.swift; sourceTree = "<group>"; };
 		DA0427032BF7C8F6005BD747 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		DA0427072BF860B9005BD747 /* DeviceOrientationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationViewModel.swift; sourceTree = "<group>"; };
 		DA0427092BF86DC3005BD747 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		DA04270C2BF8888C005BD747 /* TextDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewModel.swift; sourceTree = "<group>"; };
+		DA04270C2BF8888C005BD747 /* TextToSpeechViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechViewModel.swift; sourceTree = "<group>"; };
 		DAE9FCD12BF4CC7300DEEF1C /* Nano 2 iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano 2 iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE9FCD42BF4CC7300DEEF1C /* Nano_2_iPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_2_iPadApp.swift; sourceTree = "<group>"; };
 		DAE9FCD62BF4CC7300DEEF1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,8 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */,
-				DA0427072BF860B9005BD747 /* DeviceOrientationViewModel.swift */,
-				DA04270C2BF8888C005BD747 /* TextDetectionViewModel.swift */,
+				DA04270C2BF8888C005BD747 /* TextToSpeechViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,8 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE9FCD72BF4CC7300DEEF1C /* ContentView.swift in Sources */,
-				DA04270D2BF8888C005BD747 /* TextDetectionViewModel.swift in Sources */,
-				DA0427082BF860B9005BD747 /* DeviceOrientationViewModel.swift in Sources */,
+				DA04270D2BF8888C005BD747 /* TextToSpeechViewModel.swift in Sources */,
 				DAE9FCD52BF4CC7300DEEF1C /* Nano_2_iPadApp.swift in Sources */,
 				DA0427012BF7C713005BD747 /* CameraSetupViewModel.swift in Sources */,
 				DA0427042BF7C8F6005BD747 /* CameraView.swift in Sources */,

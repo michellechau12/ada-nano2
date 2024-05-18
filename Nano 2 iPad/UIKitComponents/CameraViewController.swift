@@ -9,13 +9,13 @@ import AVFoundation
 import UIKit
 
 class CameraViewController: UIViewController {
-    var cameraViewModel: CameraSetupViewModel?
-    var previewLayer: AVCaptureVideoPreviewLayer? //to show live camera feed
+    var cameraSetupViewModel: CameraSetupViewModel?
+    var previewLayer: AVCaptureVideoPreviewLayer? //show live camera feed
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let cameraViewModel = cameraViewModel, let captureSession = cameraViewModel.captureSession else { return }
+        guard let cameraSetupViewModel = cameraSetupViewModel, let captureSession = cameraSetupViewModel.captureSession else { return }
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         //        previewLayer.frame = view.layer.bounds
         previewLayer?.videoGravity = .resizeAspectFill
@@ -23,10 +23,10 @@ class CameraViewController: UIViewController {
         if let previewLayer = previewLayer {
             view.layer.addSublayer(previewLayer)
         }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleOrientationChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
-    //        view.layer.addSublayer(previewLayer)
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -39,12 +39,14 @@ class CameraViewController: UIViewController {
     
     private func updatePreviewLayerFrame() {
         previewLayer?.frame = view.bounds
+        
         if let connection = previewLayer?.connection, connection.isVideoOrientationSupported {
             connection.videoOrientation = getCurrentVideoOrientation()
         }
     }
     
     private func getCurrentVideoOrientation() -> AVCaptureVideoOrientation {
+        
         switch UIDevice.current.orientation {
         case .portrait:
             return .portrait

@@ -7,22 +7,22 @@
 
 
 import SwiftUI
-import AVFoundation
-import Vision
 
 struct ContentView: View {
-    @StateObject private var cameraViewModel = CameraSetupViewModel()
+    @StateObject private var cameraSetupViewModel = CameraSetupViewModel()
+    @StateObject private var textDetectionViewModel = TextToSpeechViewModel()
 
     var body: some View {
         ZStack {
-            CameraView(cameraViewModel: cameraViewModel)
+            CameraView(cameraSetupViewModel: cameraSetupViewModel)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer()
                 HStack {
+                    Spacer()
                     Button("Start Reading") {
-                        cameraViewModel.startReading()
+                        textDetectionViewModel.startReading()
                     }
                     .padding()
                     .background(Color.blue)
@@ -30,7 +30,7 @@ struct ContentView: View {
                     .cornerRadius(8)
                     
                     Button("Stop Reading") {
-                        cameraViewModel.stopReading()
+                        textDetectionViewModel.stopReading()
                     }
                     .padding()
                     .background(Color.red)
@@ -41,11 +41,3 @@ struct ContentView: View {
         }
     }
 }
-
-
-
-
-
-
-
-
