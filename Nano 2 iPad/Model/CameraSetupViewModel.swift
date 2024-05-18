@@ -11,7 +11,9 @@ import Vision
 class CameraSetupViewModel: NSObject, ObservableObject {
     var captureSession: AVCaptureSession?
     var videoOutput: AVCaptureVideoDataOutput?
-   
+    private var textDetectionRequest: VNRecognizeTextRequest!
+    private var speechSynthesizer = AVSpeechSynthesizer()
+    private var isReadingText = false
     
     override init() {
         super.init()
