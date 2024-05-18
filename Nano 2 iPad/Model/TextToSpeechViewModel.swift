@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import Vision
 
-class TextToSpeechViewModel: NSObject, ObservableObject {
+class TextDetectionViewModel: NSObject, ObservableObject {
     private var textDetectionRequest: VNRecognizeTextRequest!
     private var speechSynthesizer = AVSpeechSynthesizer()
     private var isReadingText = false
@@ -17,7 +17,7 @@ class TextToSpeechViewModel: NSObject, ObservableObject {
     override init() {
         super.init()
         setupTextDetection()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNewSampleBuffer), name: .newSampleBuffer, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNewSampleBuffer(notification:)), name: .newSampleBuffer, object: nil)
     }
     
     private func setupTextDetection() {
@@ -41,19 +41,32 @@ class TextToSpeechViewModel: NSObject, ObservableObject {
     }
     
     @objc private func handleNewSampleBuffer(notification: Notification) {
-        guard isReadingText else { return } //check isReading is true
-            let pixelBuffer = notification.object as! CVPixelBuffer
+        guard isReadingText else { return }
+        
+        // Memeriksa apakah notification.object adalah CVPixelBuffer
+        guard CFGetTypeID(notification.object as CFTypeRef) == CVPixelBufferGetTypeID() else {
+            // Display error message if notification.object is not of type CVPixelBuffer
+            print("Error: Notification object is not of type CVPixelBuffer")
+            return
+        }
 
-            let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
-            try? requestHandler.perform([textDetectionRequest])
+        // Saat ini downcast akan selalu berhasil
+        let pixelBuffer = notification.object as! CVPixelBuffer
+
+        guard let roi = notification.userInfo?["roi"] as? CGRect else { return }
+        
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+        textDetectionRequest.regionOfInterest = roi
+        
+        try? requestHandler.perform([textDetectionRequest])
     }
+
     
     func startReading() {
         isReadingText = true
     }
     
     func stopReading() {
-//        print("tapped")
         isReadingText = false
         speechSynthesizer.stopSpeaking(at: .immediate)
     }
@@ -68,4 +81,3 @@ class TextToSpeechViewModel: NSObject, ObservableObject {
         NotificationCenter.default.removeObserver(self)
     }
 }
-

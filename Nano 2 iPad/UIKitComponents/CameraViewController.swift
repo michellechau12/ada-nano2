@@ -15,9 +15,8 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let cameraSetupViewModel = cameraSetupViewModel, let captureSession = cameraSetupViewModel.captureSession else { return }
+        guard let cameraViewModel = cameraSetupViewModel, let captureSession = cameraViewModel.captureSession else { return }
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        //        previewLayer.frame = view.layer.bounds
         previewLayer?.videoGravity = .resizeAspectFill
         
         if let previewLayer = previewLayer {
@@ -26,7 +25,6 @@ class CameraViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleOrientationChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -65,5 +63,3 @@ class CameraViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 }
-
-

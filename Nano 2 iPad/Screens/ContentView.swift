@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var cameraSetupViewModel = CameraSetupViewModel()
-    @StateObject private var textDetectionViewModel = TextToSpeechViewModel()
+    @StateObject private var textDetectionViewModel = TextDetectionViewModel()
 
     var body: some View {
         ZStack {

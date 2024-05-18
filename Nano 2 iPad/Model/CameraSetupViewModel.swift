@@ -11,13 +11,14 @@ import Foundation
 class CameraSetupViewModel: NSObject, ObservableObject {
     var captureSession: AVCaptureSession?
     var videoOutput: AVCaptureVideoDataOutput?
+    private var objectDetectionViewModel = ObjectDetectionViewModel()
     
     override init() {
         super.init()
         setupCamera()
     }
     
-    // setup camera to capture video
+    // Setup camera to capture video
     func setupCamera() {
         captureSession = AVCaptureSession()
         guard let captureSession = captureSession else { return }
@@ -41,8 +42,20 @@ extension CameraSetupViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        // Notify TextDetectionViewModel with the pixel buffer
-        NotificationCenter.default.post(name: .newSampleBuffer, object: pixelBuffer)
+        // Perform object detection
+        objectDetectionViewModel.detectObjects(in: pixelBuffer) { [weak self] observations in
+            // Filter out observations that are not relevant
+            guard let self = self else { return }
+            guard let dominantObject = observations.max(by: { $0.confidence < $1.confidence }) else { return } // Get the most confident object
+            
+            // Process text detection on the region of interest (ROI)
+            let roi = dominantObject.boundingBox
+            self.processTextDetection(in: pixelBuffer, roi: roi)
+        }
+    }
+    
+    private func processTextDetection(in pixelBuffer: CVPixelBuffer, roi: CGRect) {
+        NotificationCenter.default.post(name: .newSampleBuffer, object: pixelBuffer, userInfo: ["roi": roi])
     }
 }
 
