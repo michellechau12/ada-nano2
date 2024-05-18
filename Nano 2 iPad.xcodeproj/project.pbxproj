@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0427012BF7C713005BD747 /* CameraSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */; };
+		DA0427042BF7C8F6005BD747 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427032BF7C8F6005BD747 /* CameraView.swift */; };
+		DA0427082BF860B9005BD747 /* DeviceOrientationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427072BF860B9005BD747 /* DeviceOrientationViewModel.swift */; };
+		DA04270A2BF86DC3005BD747 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427092BF86DC3005BD747 /* CameraViewController.swift */; };
+		DA04270D2BF8888C005BD747 /* TextDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04270C2BF8888C005BD747 /* TextDetectionViewModel.swift */; };
 		DAE9FCD52BF4CC7300DEEF1C /* Nano_2_iPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9FCD42BF4CC7300DEEF1C /* Nano_2_iPadApp.swift */; };
 		DAE9FCD72BF4CC7300DEEF1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9FCD62BF4CC7300DEEF1C /* ContentView.swift */; };
 		DAE9FCD92BF4CC7500DEEF1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE9FCD82BF4CC7500DEEF1C /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSetupViewModel.swift; sourceTree = "<group>"; };
+		DA0427032BF7C8F6005BD747 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		DA0427072BF860B9005BD747 /* DeviceOrientationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationViewModel.swift; sourceTree = "<group>"; };
+		DA0427092BF86DC3005BD747 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		DA04270C2BF8888C005BD747 /* TextDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewModel.swift; sourceTree = "<group>"; };
 		DAE9FCD12BF4CC7300DEEF1C /* Nano 2 iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano 2 iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE9FCD42BF4CC7300DEEF1C /* Nano_2_iPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_2_iPadApp.swift; sourceTree = "<group>"; };
 		DAE9FCD62BF4CC7300DEEF1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +42,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0427022BF7C816005BD747 /* UIKitComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DA0427032BF7C8F6005BD747 /* CameraView.swift */,
+				DA0427092BF86DC3005BD747 /* CameraViewController.swift */,
+			);
+			path = UIKitComponents;
+			sourceTree = "<group>";
+		};
+		DA0427052BF7C913005BD747 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DAE9FCD62BF4CC7300DEEF1C /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DA0427062BF7CD50005BD747 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */,
+				DA0427072BF860B9005BD747 /* DeviceOrientationViewModel.swift */,
+				DA04270C2BF8888C005BD747 /* TextDetectionViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DAE9FCC82BF4CC7300DEEF1C = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				DAE9FCD42BF4CC7300DEEF1C /* Nano_2_iPadApp.swift */,
-				DAE9FCD62BF4CC7300DEEF1C /* ContentView.swift */,
+				DA0427052BF7C913005BD747 /* Screens */,
+				DA0427062BF7CD50005BD747 /* Model */,
+				DA0427022BF7C816005BD747 /* UIKitComponents */,
 				DAE9FCD82BF4CC7500DEEF1C /* Assets.xcassets */,
 				DAE9FCDA2BF4CC7500DEEF1C /* Preview Content */,
 			);
@@ -138,7 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE9FCD72BF4CC7300DEEF1C /* ContentView.swift in Sources */,
+				DA04270D2BF8888C005BD747 /* TextDetectionViewModel.swift in Sources */,
+				DA0427082BF860B9005BD747 /* DeviceOrientationViewModel.swift in Sources */,
 				DAE9FCD52BF4CC7300DEEF1C /* Nano_2_iPadApp.swift in Sources */,
+				DA0427012BF7C713005BD747 /* CameraSetupViewModel.swift in Sources */,
+				DA0427042BF7C8F6005BD747 /* CameraView.swift in Sources */,
+				DA04270A2BF86DC3005BD747 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
