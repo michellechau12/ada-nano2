@@ -11,7 +11,6 @@
 		DA0427042BF7C8F6005BD747 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427032BF7C8F6005BD747 /* CameraView.swift */; };
 		DA04270A2BF86DC3005BD747 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0427092BF86DC3005BD747 /* CameraViewController.swift */; };
 		DA04270D2BF8888C005BD747 /* TextToSpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04270C2BF8888C005BD747 /* TextToSpeechViewModel.swift */; };
-		DA04274B2BF9E792005BD747 /* YOLOv3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA04274A2BF9E792005BD747 /* YOLOv3Int8LUT.mlmodel */; };
 		DA04274D2BF9FA6F005BD747 /* ReadTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04274C2BF9FA6F005BD747 /* ReadTextView.swift */; };
 		DA04274F2BF9FA9C005BD747 /* ReadObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04274E2BF9FA9C005BD747 /* ReadObjectView.swift */; };
 		DAE9FCD52BF4CC7300DEEF1C /* Nano_2_iPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9FCD42BF4CC7300DEEF1C /* Nano_2_iPadApp.swift */; };
@@ -25,7 +24,6 @@
 		DA0427032BF7C8F6005BD747 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		DA0427092BF86DC3005BD747 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		DA04270C2BF8888C005BD747 /* TextToSpeechViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechViewModel.swift; sourceTree = "<group>"; };
-		DA04274A2BF9E792005BD747 /* YOLOv3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Int8LUT.mlmodel; sourceTree = "<group>"; };
 		DA04274C2BF9FA6F005BD747 /* ReadTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadTextView.swift; sourceTree = "<group>"; };
 		DA04274E2BF9FA9C005BD747 /* ReadObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadObjectView.swift; sourceTree = "<group>"; };
 		DAE9FCD12BF4CC7300DEEF1C /* Nano 2 iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano 2 iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +66,6 @@
 		DA0427062BF7CD50005BD747 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA04274A2BF9E792005BD747 /* YOLOv3Int8LUT.mlmodel */,
 				DA0427002BF7C713005BD747 /* CameraSetupViewModel.swift */,
 				DA04270C2BF8888C005BD747 /* TextToSpeechViewModel.swift */,
 			);
@@ -182,7 +179,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA04274B2BF9E792005BD747 /* YOLOv3Int8LUT.mlmodel in Sources */,
 				DAE9FCD72BF4CC7300DEEF1C /* ContentView.swift in Sources */,
 				DA04274D2BF9FA6F005BD747 /* ReadTextView.swift in Sources */,
 				DA04270D2BF8888C005BD747 /* TextToSpeechViewModel.swift in Sources */,

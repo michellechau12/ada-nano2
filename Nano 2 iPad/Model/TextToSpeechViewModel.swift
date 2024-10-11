@@ -45,25 +45,25 @@ class TextToSpeechViewModel: NSObject, ObservableObject {
     }
     
     private func setupObjectDetection() {
-        guard let model = try? VNCoreMLModel(for: YOLOv3Int8LUT().model) else {
-            fatalError("Could not load YOLOv3 model")
-        }
-        
-        
-        objectDetectionRequest = VNCoreMLRequest(model: model) { [weak self] request, error in
-            guard let self = self else { return }
-            guard let observations = request.results as? [VNRecognizedObjectObservation] else { return }
-            
-            let recognizedObjects = observations.compactMap { observation in
-                observation.labels.first?.identifier
-            }
-            
-            let objectsText = recognizedObjects.joined(separator: ", ")
-            
-            if !objectsText.isEmpty {
-                self.speak(text: " \(objectsText)")
-            }
-        }
+//        guard let model = try? VNCoreMLModel(for: YOLOv3Int8LUT().model) else {
+//            fatalError("Could not load YOLOv3 model")
+//        }
+//        
+//        
+//        objectDetectionRequest = VNCoreMLRequest(model: model) { [weak self] request, error in
+//            guard let self = self else { return }
+//            guard let observations = request.results as? [VNRecognizedObjectObservation] else { return }
+//            
+//            let recognizedObjects = observations.compactMap { observation in
+//                observation.labels.first?.identifier
+//            }
+//            
+//            let objectsText = recognizedObjects.joined(separator: ", ")
+//            
+//            if !objectsText.isEmpty {
+//                self.speak(text: " \(objectsText)")
+//            }
+//        }
     }
     
     @objc private func handleNewSampleBuffer(notification: Notification) {
