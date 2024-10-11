@@ -17,7 +17,6 @@ class CameraSetupViewModel: NSObject, ObservableObject {
         setupCamera()
     }
     
-    // setup camera to capture video
     func setupCamera() {
         captureSession = AVCaptureSession()
         guard let captureSession = captureSession else { return }
@@ -42,10 +41,18 @@ extension CameraSetupViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         // Notify TextDetectionViewModel with the pixel buffer
-        NotificationCenter.default.post(name: .newSampleBuffer, object: pixelBuffer)
+        PixelBufferNotification.post(pixelBuffer: pixelBuffer)
     }
 }
 
 extension Notification.Name {
     static let newSampleBuffer = Notification.Name("newSampleBuffer")
+}
+
+struct PixelBufferNotification {
+    let pixelBuffer: CVPixelBuffer
+    
+    static func post(pixelBuffer: CVPixelBuffer) {
+        NotificationCenter.default.post(name: .newSampleBuffer, object: pixelBuffer)
+    }
 }
