@@ -1,0 +1,11 @@
+name: Nano 2 iPad
+options:
+  bundleIdPrefix: Michelle.Nano-2-iPad
+  deploymentTarget:
+    iOS: 16.0
+targets:
+  Nano 2 iPad:
+    type: application
+    platform: iOS
+    sources: 
+      - path: Nano 2 iPad
